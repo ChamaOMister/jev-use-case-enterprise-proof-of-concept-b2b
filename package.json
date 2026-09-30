@@ -1,0 +1,31 @@
+{
+  "name": "biomix-intake-triage",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Three-tier invoice intake triage (deterministic → Jev → human) on synthetic Biomix data.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "audit": "tsx src/audit/run.ts",
+    "check": "tsx src/check/run.ts",
+    "features": "tsx src/features/run.ts",
+    "jev": "tsx src/jev/run.ts",
+    "eval": "tsx src/eval/run.ts",
+    "build:data": "echo 'Phase 5' && exit 1",
+    "dev": "echo 'Phase 5' && exit 1",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@duckdb/node-api": "1.5.6-r.1",
+    "@typesafe-ai/sdk": "0.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.0",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vitest": "5.0.2"
+  }
+}

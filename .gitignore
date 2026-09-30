@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env
+.env.*
+
+# Generated artifacts. The UI's copy lives in web/public/results.json and is committed.
+out/
+.cache/
+
+web/dist/
+
+# Local-only files: machine-specific settings and the raw CSV delivery.
+.claude/settings.local.json*
+data/raw/
