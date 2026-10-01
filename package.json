@@ -13,6 +13,7 @@
     "features": "tsx src/features/run.ts",
     "jev": "tsx src/jev/run.ts",
     "eval": "tsx src/eval/run.ts",
+    "report": "tsx src/report/run.ts",
     "build:data": "echo 'Phase 5' && exit 1",
     "dev": "echo 'Phase 5' && exit 1",
     "test": "vitest run",

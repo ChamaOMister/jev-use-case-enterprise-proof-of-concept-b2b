@@ -2,6 +2,10 @@
 
 This project performs a three-tier invoice intake triage on synthetic Biomix data. Invoices pass through deterministic rules, then a Jev model, and finally human review if needed.
 
+## Results
+
+**[docs/report.html](docs/report.html)** is a self-contained results page, published with GitHub Pages: open the **Website** link under **About** on the repo page to view it in the browser (or download the file and open it locally; nothing needs to be installed). It shows where the 6,468 invoices went, what Jev was asked and how it scored, the planted-case evaluation, the review queue and the data audit.
+
 ## Setup
 
 - **Requirements:** Node.js >= 20
@@ -16,6 +20,7 @@ This project performs a three-tier invoice intake triage on synthetic Biomix dat
 - `npm run features`: Computes each invoice's features from the customer's earlier invoices and writes results to `out/features.json`
 - `npm run jev`: Asks Jev whether each jev-routed invoice is the same order as the customer's previous invoice and writes results to `out/jev.json` (`-- --dry-run` prints one state without calling the API)
 - `npm run eval`: Builds planted cases with known answers (an order split, partly rebilled, or partly rebilled with changed quantities vs. a real later order moved next to the previous one), asks Jev about each, picks the threshold that catches the partial rebills on `tune`, reports it on `test` and writes `out/eval.json` (`-- --dry-run` shows the cases and a single-feature baseline without calling the API)
+- `npm run report`: Builds `docs/report.html` from the JSON in `out/` (no API calls; run the phases above first)
 - `npm test`: Runs the test suite with Vitest
 - `npm run typecheck`: Runs TypeScript type checking
 
